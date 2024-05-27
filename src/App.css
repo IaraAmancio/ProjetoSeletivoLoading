@@ -1,38 +1,416 @@
-.App {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Varela+Round&display=swap');
+
+.App-header {
+  background-color: #035AA6;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.logo_header {
+  max-width: 70px;
+}
+
+.App-footer {
+  background-color: #035AA6;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-footer nav ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-right: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.logo_about{
+  max-width: 400px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.carousel-container {
+  margin: 30px auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+.carousel-container img{
+  max-width: 300px;
+}
+
+.carousel-container button{
+  background-color: #0056b3;
+  color: white;
+  padding: 5px 20px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.carousel-container button:hover{
+  background-color: #96c9ff;
+  color: rgb(45, 30, 128);
+
+}
+
+.carousel-container-home{
+  margin: 30px auto;
+  width: 100%;
+  max-width: 1920px;
+}
+.carousel-container-home img{
+  max-width: 1020px;
+}
+
+
+.carousel-button-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  font-family: sans-serif
+}
+
+.carousel-text-container {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 56px;
+  color: rgb(255, 255, 255);
+}
+
+.carousel-button, .button-style {
+  background-color: rgba(0, 0, 0, 0.3);;
+  color: white;
+  border: 4px solid;
+  padding: 10px 80px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 0px;
+  border-color: #ffffff;
+  text-decoration: none;
+}
+
+.carousel-button:hover {
+  background-color: #0056b3;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.button-style:hover {
+  background-color: #0056b3;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.legend {
+  background: #038C7F;
+  color: white;
+  padding: 10px;
+}
+
+/* Estilos adicionais para as seções de informações */
+
+
+.info-section > .text{
+  @apply text-white p-5 rounded-[10px_50px_10px_50px];
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px 50px 10px 50px;
+}
+
+.info-section h2 {
+  @apply text-2xl mt-0;
+  font-size: xx-large;
+  margin-top: 0;
+}
+
+.info-section p{
+  @apply text-justify;
+  text-align: justify;
+}
+
+.info-section {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  background-color: #035AA6;
+  background-image: linear-gradient(315deg,
+          white 30%, #035AA6 70%);
+ 
+   @apply p-12 grid grid-cols-1 md:grid-cols-2 relative;
+
+}
+
+.into-section:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  @apply absolute bottom-0 left-0 w-full h-[250px];
+  background: url(https://media.geeksforgeeks.org/wp-content/uploads/20200326181026/wave3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* Estilo para o catálogo de produtos */
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.category {
+  margin-bottom: 40px;
+}
+
+.category h3 {
+  margin-bottom: 20px;
+}
+
+.products {
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #038C7F;
+  
+}
+
+.product img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 15px 15px 45px 15px;
+}
+
+.product p {
+  margin: 0;
+}
+
+.icons-sociais{
+  display: flex;
+  justify-content: center;
+}
+
+.icons-sociais nav ul li a{
+  color: #035AA6;
+  font-size: 30px;
+}
+
+.icons-sociais nav ul{
+  gap: 50px;
+  padding: 20px;
+}
+
+.titulo{
+  background-color: #035AA6;
+  color: white;
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+  font-size: x-large;
+}
+
+.text-align{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  text-align: justify;
+  @apply flex justify-center py-10 w-1/2 text-justify;
+}
+
+.portal_denuncia{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text{
+  text-align: justify;
+  padding: 20px;
+  width: 80%;
+}
+
+.content-sidebar{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: center;
+}
+
+h1{
+  font-size: xx-large;
+  text-align: center;
+  padding: 20px;
+}
+
+h3{
+  font-size: larger;
+  text-align: center; 
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-responsive{
+  display: flex;
+  justify-content: center;
+}
+
+/* App.css */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 16px;
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  @apply border border-gray-300 rounded overflow-hidden text-center bg-white shadow-md flex items-center;
+}
+
+.card-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  padding: 10px;
+  @apply w-full max-w-[200px] h-auto p-2;
+}
+
+.card h3 {
+  margin: 16px 0 8px;
+  @apply my-4;
+}
+
+.card p {
+  margin: 0 16px 16px;
+  @apply mx-4 mb-4;
+}
+
+.contact-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  @apply flex flex-col md:flex-row items-center justify-center m-5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 500px;
+  @apply flex flex-col mr-0 md:mr-5 p-5 border border-gray-300 rounded bg-gray-100 w-full md:w-[500px];
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.contact-image img {
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.container-mapa{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
 }
